@@ -12,6 +12,7 @@ This API has `CRUD` implemented and other functionalities such as `search criter
 - `DataProvider`: Objects that correspond to the tables in the database.
 - `Repository`: Like a wrapper for the database. Read and write data to the database.
 - `UseCases`: Layer capable of managing data from Controllers and comunicating to Repositories.
+- `Configurations` : Containing Basic Authentication file.
 - `Tests`: Integration Tests to validate the API codebase.
 - `PostmanCollection.json`: API collection.
 
