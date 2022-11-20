@@ -1,4 +1,4 @@
-# REST API in PHP - João De Macedo
+# REST API in Java - João De Macedo
 #### A simple REST API of a vending machine.
 
 ### What is this?
