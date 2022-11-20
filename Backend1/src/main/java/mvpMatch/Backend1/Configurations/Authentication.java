@@ -35,13 +35,15 @@ public class Authentication implements HandlerInterceptor {
 
     private static String productByMaxCostPattern = "\\/products\\/cost\\/[0-9]*";
 
+    private static String productByOwnerPattern = "\\/products\\/owner\\/[aA-zZ]*";
+
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         try {
 
             //Get products should not require authentication
-            if(getMethod.equals(request.getMethod()) && (productURI.equals(request.getRequestURI()) || request.getRequestURI().matches(productIDURIPattern) || request.getRequestURI().matches(productByMaxCostPattern))){
+            if(getMethod.equals(request.getMethod()) && (productURI.equals(request.getRequestURI()) || request.getRequestURI().matches(productIDURIPattern) || request.getRequestURI().matches(productByMaxCostPattern) || request.getRequestURI().matches(productByOwnerPattern))){
                 return true;
             }
 

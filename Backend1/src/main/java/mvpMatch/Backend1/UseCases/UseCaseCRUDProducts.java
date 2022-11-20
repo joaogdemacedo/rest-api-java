@@ -70,15 +70,11 @@ public class UseCaseCRUDProducts {
         }
         else {
             Product refProduct = productRepository.findById(id).get();
-            refProduct.setAmount(refProduct.getAmount()+1);
+            refProduct.setAmount(refProduct.getAmount()+product.getAmount());
             productRepository.saveAndFlush(refProduct);
-            return new ResponseEntity<>(product,HttpStatus.OK);
+            return new ResponseEntity<>(refProduct,HttpStatus.OK);
 
         }
-    }
-
-    public Product getProduct(Product product){
-        return  productRepository.findById(product.getId()).get();
     }
 
     public ResponseEntity<Void> deleteProduct(int id){
